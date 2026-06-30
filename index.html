@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image & Text · minimal layout</title>
+  <!-- 
+    This page shows a clean, responsive card with an image and text.
+    No external dependencies — pure HTML & CSS.
+  -->
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      padding: 1.5rem;
+    }
+
+    /* main card — image + text container */
+    .card {
+      max-width: 780px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(2px);
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.25),
+                  0 8px 24px -6px rgba(0, 0, 0, 0.08);
+      padding: 1.8rem 1.8rem 2.5rem;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* image wrapper – keeps aspect ratio & rounded corners */
+    .image-wrapper {
+    width: 70%;
+    max-width: 400px;
+    margin: 0 auto 1.8rem;
+    border-radius: 1.4rem;
+    overflow: hidden;
+    background: #d9e2e8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.image-wrapper img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+    /* subtle hover effect on image */
+    .image-wrapper:hover img {
+      transform: scale(1.01);
+    }
+
+    /* text area */
+    .text-content {
+      padding: 0 0.2rem;
+    }
+
+    .text-content h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b1e2b;
+      margin-bottom: 0.65rem;
+      line-height: 1.2;
+    }
+
+    .text-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #1f3a4b;
+      max-width: 65ch;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-content .sub {
+      font-size: 0.95rem;
+      color: #4b677b;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+      display: inline-block;
+      letter-spacing: 0.01em;
+    }
+
+    /* small screens */
+    @media (max-width: 500px) {
+      .card {
+        padding: 1.2rem 1.2rem 1.8rem;
+        border-radius: 1.6rem;
+      }
+      .text-content h2 {
+        font-size: 1.6rem;
+      }
+      .text-content p {
+        font-size: 1rem;
+      }
+    }
+
+    /* optional: extra fine tuning for very narrow */
+    @media (max-width: 380px) {
+      .card {
+        padding: 0.9rem;
+      }
+      .text-content h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="card" role="main">
+    <!-- Image section -->
+    <div class="image-wrapper">
+      <!-- 
+        Beautiful, free-to-use image from unsplash:
+        "mountain lake with reflection" – serene, modern, high-res.
+        The image is loaded with width & height hints for performance.
+      -->
+      <img 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtPQvK-7KwqhODDEqv6DU_JL8oQU9f0Q9COUMo75gl6A&s=10"
+        alt="A calm mountain lake reflecting the sky and pine trees – peaceful landscape"
+        width="1200" 
+        height="675"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Text content -->
+    <div class="text-content">
+      <h1>Ye 10th A wale to bohot khatarnak h......</h1>
+      
+      <!-- extra descriptive line, keeps the design interesting -->
+      
+    </div>
+  </main>
+
+</body>
+</html>
